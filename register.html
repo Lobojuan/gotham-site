@@ -158,6 +158,7 @@ const SITE_URL='index.html';
 const PAY_LINK='';                       // Paystack / Hubtel payment-page URL (card + MoMo). Empty = hidden until ready.
 const MOMO_NUMBER='[Gotham MoMo number]'; // Joy's MoMo merchant/wallet number
 const MOMO_NAME='Gotham Consult';
+const CRM_API='';                         // CRM worker base URL, e.g. 'https://gotham-crm.carlson-capital.workers.dev'. Empty = registrations go via WhatsApp/email only.
 /* ======================================== */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -238,8 +239,15 @@ function valid(){const bad=['#co','#nm','#em','#ph'].find(s=>!$(s).value.trim())
  if(!$('#cons').checked){$('#err').textContent='Please tick the consent box.';return false}
  $('#err').textContent='';return true}
 function done(){$('#refOk').textContent=ref;$('#sumBody').hidden=true;$('#ok').classList.add('on');$('#ok').scrollIntoView({behavior:'smooth',block:'center'})}
-$('#goWa').onclick=()=>{if(!valid())return;window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg())}`,'_blank','noopener');done()};
-$('#goMail').onclick=()=>{if(!valid())return;location.href=`mailto:${EMAIL}?subject=${encodeURIComponent('Registration '+ref+': '+sel.t)}&body=${encodeURIComponent(msg())}`;done()};
+/* fire-and-forget copy of the registration to the CRM back office; WhatsApp/email stays the primary channel */
+function postReg(){if(!CRM_API)return;
+ const body={ref,item_id:sel.id,item_title:sel.t,item_sub:sel.s||'',qty:sel.q?qty:1,unit_price:sel.p,total:total(),currency:sel.c,
+ payment_method:total()?pay:'free',company:$('#co').value.trim(),reg_no:$('#reg').value.trim(),name:$('#nm').value.trim(),
+ role:$('#role').value.trim(),email:$('#em').value.trim(),phone:$('#ph').value.trim(),country:$('#ct').value,sector:$('#sec').value,
+ guests:$('#gs').value.trim()};
+ fetch(`${CRM_API}/api/register`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).catch(()=>{})}
+$('#goWa').onclick=()=>{if(!valid())return;postReg();window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg())}`,'_blank','noopener');done()};
+$('#goMail').onclick=()=>{if(!valid())return;postReg();location.href=`mailto:${EMAIL}?subject=${encodeURIComponent('Registration '+ref+': '+sel.t)}&body=${encodeURIComponent(msg())}`;done()};
 $('#again').onclick=()=>{$('#ok').classList.remove('on');$('#sumBody').hidden=false;['#nm','#role','#em','#ph','#gs'].forEach(s=>$(s).value='');newRef();render()};
 $('#siteLink').href=SITE_URL;
 

@@ -1,0 +1,14 @@
+name = "gotham-crm"
+main = "crm.js"
+compatibility_date = "2026-09-18"
+
+# Create the database once with:  wrangler d1 create gotham-crm
+# then paste the returned database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "gotham-crm"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+# Secrets — set with the CLI, never in this file:
+#   wrangler secret put ADMIN_PASSWORD   # back-office login password
+#   wrangler secret put TOKEN_SECRET     # long random string for HMAC token signing
