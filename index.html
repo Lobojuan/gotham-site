@@ -465,7 +465,7 @@ nav.main a{white-space:nowrap}
 .joycard b{display:block;font-size:18px;color:var(--ink)}
 .joycard span{font-size:14px;color:var(--mute)}
 
-.ttabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.ttabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
 .ttabs button{all:unset;box-sizing:border-box;cursor:pointer;border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:2px;transition:border-color .2s,box-shadow .2s}
 .ttabs button b{font-size:17px}
 .ttabs button span{font-size:13.5px;color:var(--mute)}
@@ -532,6 +532,16 @@ nav.main a{white-space:nowrap}
 .cctool ul{margin:0;padding-left:18px;color:var(--navy-mute);font-size:14.5px;display:grid;gap:4px}
 .cctool p{margin:0;color:var(--navy-mute);font-size:14.5px}
 @media(max-width:860px){.cctools,.ccstats{grid-template-columns:1fr}}
+/* side-by-side company duo */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0 4px}
+.duo .co-card{border:1px solid var(--line);border-radius:18px;padding:24px;background:var(--surface);display:flex;flex-direction:column;gap:10px}
+.duo .co-card .co-tag{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.duo .co-card h3{font-size:23px}
+.duo .co-card p{margin:0;color:var(--mute);font-size:14.5px}
+.duo .co-card .co-facts{display:flex;gap:16px;flex-wrap:wrap;margin-top:4px}
+.duo .co-card .co-facts div b{display:block;font-size:19px;color:var(--ink)}
+.duo .co-card .co-facts div span{font-size:12.5px;color:var(--mute)}
+@media(max-width:860px){.duo{grid-template-columns:1fr}}
 .brand small{display:block;font-size:10.5px;font-weight:500;color:var(--mute);letter-spacing:.04em;margin-top:-2px}
 @media(max-width:860px){.mtools{grid-template-columns:1fr}.mstats{grid-template-columns:1fr}}
 </style>
@@ -540,7 +550,7 @@ nav.main a{white-space:nowrap}
 
 <div class="demo">Design demo · payments are handled by mobile money transfer and confirmed on WhatsApp</div>
 <header id="hdr"><div class="wrap bar">
-  <a class="brand" href="#top"><span class="mark">G</span><span>Gotham Consult<small>in partnership with Carlson Capital Ltd</small></span></a>
+  <a class="brand" href="#top"><span class="mark">G</span><span>Gotham Consult × Carlson Capital Ltd<small>Business advisory · Technology · Mining · Accra, Ghana</small></span></a>
   <nav class="main" aria-label="Main">
     <a href="#start">Start here</a><a href="#ghana">Invest in Ghana</a><a href="#mining">Mining</a><a href="#tools">Free tools</a><a href="#forums">Forums</a><a href="#join">Membership</a><a href="#carlson">Carlson Capital</a><a href="#contact">Contact</a><a class="navreg" href="register.html" >Register</a>
   </nav>
@@ -557,7 +567,7 @@ nav.main a{white-space:nowrap}
   <div>
     <p class="eyebrow rise">Business development · International projects · Accra</p>
     <h1 class="rise d1">Where local potential meets <em class="serif">global capital.</em></h1>
-    <p class="lede rise d2">We take businesses from idea to investment-ready to globally visible. Advisory, technology and the right introductions for companies in Ghana and the investors who want to back them.</p>
+    <p class="lede rise d2">One team, two companies: Gotham Consult and Carlson Capital Ltd take businesses from idea to investment-ready to globally visible. Advisory, technology, geology and the right introductions for companies in Ghana and the investors — local or foreign — who want to back them.</p>
     <div class="hkpi rise d3"><div class="kgrid hk">
       <div class="k"><b class="num" data-count="6.2" data-dec="1" data-suf="%">6.2%</b><span>GDP growth, first half 2026</span></div>
       <div class="k"><b class="num" data-count="5.0" data-dec="1" data-suf="%">5.0%</b><span>Inflation, August 2026</span></div>
@@ -595,17 +605,19 @@ nav.main a{white-space:nowrap}
 <!-- TOOLS -->
 <section id="tools" style="padding-top:40px"><div class="wrap">
   <div class="shead">
-    <div><p class="eyebrow">Free tools · for every business in Ghana</p><h2>From chop bar to factory, <em class="serif">know where you stand.</em></h2></div>
-    <p>No sign-up, no cost. Traders, farmers, salons, churches, start-ups and companies: answer a few taps and get your own to-do list. Send it to us on WhatsApp if you want help.</p>
+    <div><p class="eyebrow">Free tools · for local businesses and foreign investors</p><h2>From chop bar to German investor, <em class="serif">know where you stand.</em></h2></div>
+    <p>No sign-up, no cost. Traders, farmers, salons, churches and start-ups: run the health, funding and VAT checks. Investors coming to Ghana — including from Germany and the EU: the investor entry check maps your setup steps, and we quote fixed fees in EUR, USD, GBP or GHS.</p>
   </div>
   <div class="ttabs" role="tablist" aria-label="Free tools">
     <button role="tab" aria-selected="true" data-tool="hc" id="tt-hc"><b>Business health check</b><span>Registrations, permits, tax, staff</span></button>
     <button role="tab" aria-selected="false" data-tool="ff" id="tt-ff"><b>Funding finder</b><span>Loans, grants and programmes</span></button>
     <button role="tab" aria-selected="false" data-tool="vt" id="tt-vt"><b>VAT &amp; E-VAT check</b><span>New 2026 VAT rules</span></button>
+    <button role="tab" aria-selected="false" data-tool="ie" id="tt-ie"><b>Investor entry check</b><span>Foreign investors entering Ghana</span></button>
   </div>
   <div class="tool" id="tool-hc" role="tabpanel" aria-labelledby="tt-hc"><form class="q" id="hcq"></form><div class="result" id="hcr" hidden></div></div>
   <div class="tool" id="tool-ff" role="tabpanel" aria-labelledby="tt-ff" hidden><form class="q" id="grq"></form><div class="result" id="grr" hidden></div></div>
   <div class="tool" id="tool-vt" role="tabpanel" aria-labelledby="tt-vt" hidden><form class="q" id="vatq"></form><div class="result" id="vatr" hidden></div></div>
+  <div class="tool" id="tool-ie" role="tabpanel" aria-labelledby="tt-ie" hidden><form class="q" id="ieq"></form><div class="result" id="ier" hidden></div></div>
   <p class="entity">Guidance only, based on public rules as of September 2026. Always confirm with the agency concerned; we check the details for you before you act.</p>
 </div></section>
 
@@ -741,15 +753,30 @@ nav.main a{white-space:nowrap}
 <section id="about" style="padding-top:24px"><div class="wrap about">
   <figure class="joyfig"><img src="img/joy-gipc.webp" alt="Joy Anthony Preston at the Ghana Club 100 Awards, hosted by GIPC" loading="lazy"><figcaption>Joy Anthony Preston at the GIPC Ghana Club 100 Awards</figcaption></figure>
   <div>
-    <p class="eyebrow">About Gotham Consult</p>
+    <p class="eyebrow">About us — two companies, one team</p>
     <h2>A bridge between business, government and <em class="serif">global partners.</em></h2>
-    <p>Gotham Consult is an Accra-based business development and international projects consultancy, founded in 2018. We facilitate investment between the private sector and governments across Ghana, Nigeria, the UK, the US and Europe, combining business advisory, technology and media.</p>
-    <p><b style="color:var(--ink)">Joy Anthony Preston</b>, MSc Strategic Leadership and Governance, leads the firm. She brings a decade of experience facilitating high-value partnerships, founded the Global Genius Foundation and convenes the Gotham Consult Business Seminar. She works with a team of senior consultants in finance, energy, mining and technology.</p>
-    <div class="partner"><b>Strategic partner: Carlson Capital Ltd.</b> Gotham Consult delivers mining, technology, fintech and investor services together with Carlson Capital Ltd, a company registered in Ghana — see the <a href="#carlson" style="color:var(--gold);font-weight:600">Carlson Capital Ltd section</a> below for its platforms and track record.</div>
-    <div class="facts">
-      <div><b>2018</b><span>Founded in Accra</span></div>
-      <div><b>120+</b><span>Clients served</span></div>
-      <div><b>5</b><span>Markets: GH, NG, UK, US, EU</span></div>
+    <p>We are two Ghana-based companies working side by side: <b style="color:var(--ink)">Gotham Consult</b>, the Accra business development and international projects consultancy founded in 2018, and <b style="color:var(--ink)">Carlson Capital Ltd</b>, a Ghana-registered investment and technology company. Together we combine business advisory, field geology, in-house software and investor networks across Ghana, Nigeria, the UK, the US and Europe.</p>
+    <div class="duo">
+      <div class="co-card">
+        <span class="co-tag">Gotham Consult · Accra, since 2018</span>
+        <h3>Advisory, partnerships &amp; delivery</h3>
+        <p><b style="color:var(--ink)">Joy Anthony Preston</b>, MSc Strategic Leadership and Governance, leads the firm. She brings a decade of experience facilitating high-value partnerships, founded the Global Genius Foundation and convenes the Gotham Consult Business Seminar, with a team of senior consultants in finance, energy, mining and technology.</p>
+        <div class="co-facts">
+          <div><b>2018</b><span>Founded in Accra</span></div>
+          <div><b>120+</b><span>Clients served</span></div>
+          <div><b>5</b><span>Markets: GH, NG, UK, US, EU</span></div>
+        </div>
+      </div>
+      <div class="co-card">
+        <span class="co-tag">Carlson Capital Ltd · registered in Ghana</span>
+        <h3>Capital, geology &amp; technology</h3>
+        <p>Carlson Capital Ltd brings field geology, in-house software platforms — TERRA, Afri-MINEX and Universal Credit Hub — and 25 years of project delivery across Africa and Europe. It is the technology and investment arm behind our mining, fintech and investor services.</p>
+        <div class="co-facts">
+          <div><b>25 yrs</b><span>Delivery across Africa &amp; Europe</span></div>
+          <div><b>3</b><span>Platforms built in-house</span></div>
+          <div><b><a href="#carlson" style="color:var(--gold)">See more →</a></b><span>&nbsp;</span></div>
+        </div>
+      </div>
     </div>
     <div class="values">
       <div><i>✓</i><span>We charge for preparation and delivery, never for access or government decisions.</span></div>
@@ -796,7 +823,7 @@ nav.main a{white-space:nowrap}
       <div class="joycard"><img src="img/joy.webp" alt="Joy Anthony Preston" loading="lazy"><div><b>Joy Anthony Preston</b><span>Founder &amp; Development Partner</span></div></div>
       <p class="eyebrow" style="color:var(--gold)">Contact</p>
       <h2>Let's build together.</h2>
-      <p>Tell us where your business is today and where you want it to be. We reply within one working day.</p>
+      <p>One team from both companies — Gotham Consult and Carlson Capital Ltd. Tell us where your business is today and where you want it to be. We reply within one working day, in English, French, German or any Nordic language.</p>
       <div class="clist">
         <a href="https://wa.me/233550416627" target="_blank" rel="noopener"><small>WhatsApp</small>+233 55 041 6627</a>
         <a href="tel:+233550416627"><small>Phone</small>055 041 6627</a>
@@ -1061,7 +1088,7 @@ const w=document.getElementById('waMin');if(w)w.href=wa('Hello Gotham Consult, I
 
 
 /* ===== free tools ===== */
-$$('.ttabs button').forEach(b=>b.onclick=()=>{$$('.ttabs button').forEach(x=>x.setAttribute('aria-selected',x===b));['hc','ff','vt'].forEach(k=>$('#tool-'+k).hidden=k!==b.dataset.tool)});
+$$('.ttabs button').forEach(b=>b.onclick=()=>{$$('.ttabs button').forEach(x=>x.setAttribute('aria-selected',x===b));['hc','ff','vt','ie'].forEach(k=>$('#tool-'+k).hidden=k!==b.dataset.tool)});
 const fs=(n,l,o)=>`<fieldset><legend>${l}</legend><div class="opts">${o.map(x=>`<label><input type="radio" name="${n}" value="${x}"><span>${x}</span></label>`).join('')}</div></fieldset>`;
 const val=(f,n)=>($(`#${f} [name="${n}"]:checked`)||{}).value;
 const SECT=['Trading & retail','Food, drinks & chop bar','Beauty & cosmetics','Farming & agro','Manufacturing','Transport & logistics','Construction & real estate','Tech & creative','Health & education','Hotels & tourism','Services & consulting','Church, NGO or association'];
@@ -1140,6 +1167,37 @@ $('#vatq').onsubmit=e=>{e.preventDefault();const k=['gs','ts','vr','ei','sw'],a=
  else {st='a';h='Prepare in the next 1–3 months';t='You are VAT-registered but not on E-VAT yet. Your invoicing must connect to GRA before your batch is called, and ex-flat-rate businesses must move to standard VAT.'}
  $('#vatr').hidden=false;$('#vatr').innerHTML=`<span class="st ${st}">${h}</span><p>${t}</p><div class="acts"><a class="btn btn-wa" target="_blank" rel="noopener" href="${wa('Hello Gotham Consult, my VAT check: '+h+'. Sell: '+a.gs+'; sales: '+a.ts+'; VAT-registered: '+a.vr+'; E-VAT: '+a.ei+'; invoicing: '+a.sw+'. Can you help?')}">Send result on WhatsApp</a></div>`};
 
+/* 4. Investor entry check — for foreign investors coming to Ghana */
+const ISEC=['Manufacturing & processing','Agribusiness & food','Mining & minerals','Energy & renewables (solar, hydro)','Construction & real estate','Tech & digital services','Tourism & hospitality','Trading & distribution','Other'];
+$('#ieq').innerHTML=`<div class="row2">${fs('ior','Who is investing?',['Foreign company entering Ghana','Foreign individual / entrepreneur','Diaspora Ghanaian','Ghanaian company seeking foreign capital'])}${fs('isec','Main sector',ISEC)}</div>
+<div class="row2">${fs('isi','Planned investment size',['Under USD 100,000','USD 100,000 – 1,000,000','Over USD 1,000,000','Not sure yet'])}${fs('ifz','Will you sell mostly outside Ghana (export)?',['Yes — export-focused','No — sell into Ghana','Not sure yet'])}</div>
+<div class="row2">${fs('itm','Team on the ground in Ghana',['None yet','A representative or partner','Local staff already'])}${fs('iwh','Where are you coming from?',['Germany / Austria / Switzerland','Other EU / UK','USA / Canada','Nordics','Other'])}</div>
+<div><button class="btn btn-dark" type="submit">Get my entry checklist</button></div>`;
+$('#ieq').onsubmit=e=>{e.preventDefault();const k=['ior','isec','isi','ifz','itm','iwh'],a={};k.forEach(n=>a[n]=val('ieq',n));
+ if(k.some(n=>!a[n])){$('#ier').hidden=false;$('#ier').innerHTML='<p>Please answer every question to get your checklist.</p>';return}
+ const L=[],add=(state,t,d,help)=>L.push({state,t,d,help});
+ const foreign=a.ior!=='Ghanaian company seeking foreign capital';
+ add('do','GIPC registration under Act 1173 (GIPA Act)','Foreign investors register with the Ghana Investment Promotion Centre under the current investment law. For most sectors the old minimum-capital requirement no longer applies. Registration unlocks the investment protections below.','Market entry & company setup from USD 2,500, plus government fees');
+ add('do','Incorporate at the Office of the Registrar of Companies','A private company limited by shares is the standard vehicle for foreign investors. We handle name reservation, incorporation, constitutional documents and the registered office.','Included in our setup package');
+ add('do','Tax Identification Number & GRA registration','Every company needs a TIN, and registration for corporate income tax (25% standard rate; concessions below may apply), withholding taxes and, if you sell goods in Ghana, VAT / E-VAT where thresholds are met.','Tax setup included in setup package');
+ add('do','Corporate bank account & capital transfer','Open a corporate account and route your investment through the banking system with Bank of Ghana documentation — this is what makes later repatriation of dividends and sale proceeds straightforward.','We introduce you to the right banks and prepare the paperwork');
+ add('chk','Confirm your tax incentives before you structure','Priority-sector investments and free-zone enterprises can qualify for multi-year corporate tax holidays and other reliefs. The exact rates depend on your sector and location — we confirm the current position with GIPC and GRA before you commit.','Incentive check included in our Ghana briefing (USD 250, credited to follow-on work)');
+ if(a.ifz!=='No — sell into Ghana')add('chk','Compare free zone vs domestic regime','Ghana Free Zones Authority (GFZA) status suits export-focused businesses with tax and customs advantages; domestic GIPC registration suits the local market. Selling into Ghana from a free zone is possible with duty payments.','We model both regimes for your numbers');
+ if(a.isec==='Mining & minerals')add('do','Mining-specific licensing path','Mining rights come from the Minerals Commission (reconnaissance → prospecting → mining lease), with EPA permits and land/ community agreements. Small-scale licences are reserved for Ghanaian citizens — foreign capital enters via large-scale licences, JVs or services. Our Carlson Capital field team (TERRA + Afri-MINEX) runs concession screening from USD 7,500.','Book a mining regime briefing (USD 750, credited to follow-on work)');
+ if(a.isec==='Energy & renewables (solar, hydro)')add('chk','Energy sector permits','Generation projects need Energy Commission licensing and EPA clearance; PPAs are signed off-taker by off-taker.','We package bankable energy projects for DFIs and banks');
+ if(a.itm==='None yet')add('do','Work & residence permits for foreign staff','Foreign nationals working in Ghana need residence permits. Directors and key staff are typically sponsored by the Ghanaian entity once incorporated.','Permit handling included in our setup package');
+ else add('chk','Check your team\u2019s permits and status','Existing representatives should hold valid residence permits and clear roles in the company structure.','We review and regularise');
+ if(a.iwh.startsWith('Germany'))add('chk','German support desks in Ghana','The German Chamber (AHK Ghana), GIZ programmes and German development finance (KfW and DEG) are all active in Ghana — from apprenticeships to co-financing. We point you to the right desk for your project.','Ask about this in your free briefing call');
+ add('ok','Investor protections apply once registered','Under Ghana\u2019s investment law, registered foreign investors can repatriate dividends and proceeds, and benefit from protection against expropriation. Ghana also offers bilateral investment treaties with Germany and most EU states.','We keep your filings current so protections stay in force');
+ const done=L.filter(x=>x.state==='ok').length,score=Math.round(done/L.length*100),col=score>=75?'var(--green)':score>=45?'var(--amber)':'#A8321F';
+ const order={do:0,chk:1,ok:2};L.sort((x,y)=>order[x.state]-order[y.state]);
+ const todo=L.filter(x=>x.state!=='ok').map(x=>'- '+x.t).join('\n');
+ $('#ier').hidden=false;$('#ier').innerHTML=`<div class="score"><div class="ring" style="--p:${score};--c:${col}"><b>${score}</b></div><div><h4>Your entry readiness: ${score>=75?'strong':score>=45?'getting there':'early stage'}</h4><small class="mute">${L.length-done} step${L.length-done===1?'':'s'} to plan, most urgent first · indicative only — we confirm details with GIPC, GRA and the agencies</small></div></div>
+ <ul class="todo">${L.map(x=>`<li class="${x.state}"><i>${x.state==='ok'?'✓':x.state==='do'?'!':'?'}</i><div><b>${x.t}</b><small>${x.d}</small>${x.help&&x.state!=='ok'?`<em>${x.help}</em>`:''}</div></li>`).join('')}</ul>
+ <p class="entity">All fees fixed in writing before work starts, payable by bank transfer or mobile money. We invoice in EUR, USD, GBP or GHS — Carlson Capital Ltd issues the invoice for investor services.</p>
+ <div class="acts"><a class="btn btn-wa" target="_blank" rel="noopener" href="${wa(`Hello Gotham Consult × Carlson Capital Ltd, I am a foreign investor (${a.iwh}) entering Ghana (${a.isec}, ${a.isi}). My entry check score: ${score}/100. Next steps:\n${todo}\nCan we book the free briefing call?`)}">Send my checklist on WhatsApp</a></div>`;
+ $('#ier').scrollIntoView({behavior:'smooth',block:'nearest'})};
+
 /* Membership tiers */
 const TIERS=[
  {t:'Ghana Business Brief',p:'Free',s:'',f:['Weekly brief on WhatsApp','Grant & tender alerts','Forum announcements'],c:'Join free',m:'Please add me to the free Ghana Business Brief on WhatsApp.'},
@@ -1148,21 +1206,35 @@ const TIERS=[
  {t:'Investor Desk',p:'USD 1,000',s:'/ month',f:['Local representation','Meetings & site visits','Monthly written report','Deal pipeline & introductions'],c:'Talk to us',m:'I am interested in the Investor Desk (USD 1,000/month).'}];
 $('#tiers').innerHTML=TIERS.map(x=>`<div class="tier reveal ${x.hot?'hot':''}"><h3>${x.t}</h3><div class="price">${x.p} <small>${x.s}</small></div><ul>${x.f.map(i=>`<li>${i}</li>`).join('')}</ul><a class="btn ${x.hot?'btn-dark':'btn-line'}" href="${wa('Hello Gotham Consult. '+x.m)}" target="_blank" rel="noopener">${x.c}</a></div>`).join('');
 
-/* assistant */
+/* assistant — AI-first (Cloudflare Worker), local rules as offline fallback */
+const AI_URL='https://gotham-ai.carlson-capital.workers.dev/api/chat';
+let aiOff=false;
 const A=[
- [/gipa|1173|register|capital|foreign/i,'The GIPA Act 2026 (Act 1173) removed the minimum capital requirement for most foreign investors. We handle registration end to end. Shall I connect you with the team on WhatsApp?'],
- [/pay|momo|price|ticket|cost/i,'Forum tickets are paid by mobile money (MTN, Telecel or AirtelTigo). Click Register on a forum: we send the price, reference and instructions to your WhatsApp, and confirm your seat when payment arrives.'],
+ [/gipa|1173|register|capital|foreign/i,'Under the GIPA Act 2026 (Act 1173), most foreign investors no longer face a minimum capital requirement. Gotham Consult handles GIPC registration, incorporation, banking and permits end to end — from USD 2,500 plus government fees. Want me to connect you on WhatsApp?'],
+ [/german|germany|deutsch/i,'Willkommen! We work with German and EU investors entering Ghana: GIPC registration under Act 1173, company setup, free zone vs domestic structuring, and introductions to AHK Ghana, GIZ and German development finance. The Ghana briefing (USD 250, credited to follow-on work) is the best start.'],
+ [/carlson|terra|afri-minex|credit hub/i,'Carlson Capital Ltd is our sister company and technology arm, registered in Ghana: 25 years of delivery across Africa and Europe, and three in-house platforms — TERRA (field geology app), Afri-MINEX (concession & licence mapping) and Universal Credit Hub (credit-registry software). See the Carlson Capital section on this page.'],
+ [/pay|momo|price|ticket|cost|fee/i,'Forum tickets and memberships are paid by mobile money (MTN, Telecel or AirtelTigo); investor services are invoiced by Carlson Capital Ltd in EUR, USD, GBP or GHS. Click Register and we send the price, reference and instructions to your WhatsApp.'],
  [/forum|event|seminar|when|where/i,'Next: "SMEs at the Centre" on Thursday 24 September 2026, 14:00 at Tang Palace Hotel, Accra (GHS 300). See the Forums section to register.'],
- [/invest|sector|economy|growth|ghana/i,'Ghana grew 6.2% in the first half of 2026, with ICT up 30.9% and inflation down to 5.0%. The Invest in Ghana section shows sector outlooks for German, Nordic, UK and global investors.'],
+ [/invest|sector|economy|growth|ghana/i,'Ghana grew 6.2% in the first half of 2026, with ICT up 30.9% and inflation down to 5.0%. The Invest in Ghana section shows sector outlooks, and the free investor entry check maps your setup steps.'],
  [/ai|website|digital|hosting|automation/i,'Our AI and digital practices cover AI readiness audits, finance and reporting automation, websites with MoMo payments, and managed hosting.'],
- [/energy|solar|mining|gold/i,'Our energy, mining and infrastructure practice prepares bankable projects: solar IPPs, PPAs, geology-led due diligence and packaging for development finance.'],
- [/hello|hi|hey/i,'Hello! Ask me about our services, forums, or investing in Ghana.']];
+ [/energy|solar|mining|gold/i,'Our energy, mining and infrastructure practice prepares bankable projects: solar IPPs, PPAs, geology-led due diligence with TERRA field data, and packaging for development finance. Concession screening starts at USD 7,500.'],
+ [/hello|hi|hey/i,'Hello! Ask me about our services, forums, Carlson Capital\u2019s platforms, or investing in Ghana.']];
 const say=(t,w)=>{const m=document.createElement('div');m.className='m '+w;m.textContent=t;$('#msgs').append(m);$('#msgs').scrollTop=1e6};
-function answer(q){say(q,'me');const h=A.find(([r])=>r.test(q));setTimeout(()=>say(h?h[1]:'Good question. Our team will answer you personally on WhatsApp during office hours.','bot'),450)}
-$('#chips').innerHTML=['What is GIPA Act 1173?','How do I pay?','Next forum','Invest in Ghana'].map(c=>`<button type="button">${c}</button>`).join('')+`<a class="btn btn-wa" style="padding:5px 12px;font-size:12.5px" href="${wa('Hello Gotham Consult, I have a question.')}" target="_blank" rel="noopener">WhatsApp us</a>`;
+async function answer(q){say(q,'me');
+ const local=()=>{const h=A.find(([r])=>r.test(q));setTimeout(()=>say(h?h[1]:'Good question. Our team will answer you personally on WhatsApp during office hours.','bot'),450)};
+ if(!aiOff){
+  try{
+   const c=new AbortController();const to=setTimeout(()=>c.abort(),12000);
+   const r=await fetch(AI_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q}),signal:c.signal});
+   clearTimeout(to);const j=await r.json();
+   if(j.ok&&j.reply){say(j.reply,'bot');return}
+   if(j&&j.configured===false)aiOff=true;
+  }catch(e){}}
+ local()}
+$('#chips').innerHTML=['What is GIPA Act 1173?','German investor entering Ghana','Carlson Capital platforms','Next forum','Invest in Ghana'].map(c=>`<button type="button">${c}</button>`).join('')+`<a class="btn btn-wa" style="padding:5px 12px;font-size:12.5px" href="${wa('Hello Gotham Consult, I have a question.')}" target="_blank" rel="noopener">WhatsApp us</a>`;
 $('#chips').addEventListener('click',e=>{if(e.target.tagName==='BUTTON')answer(e.target.textContent)});
 $('#chatF').onsubmit=e=>{e.preventDefault();const v=$('#chatI').value.trim();if(v){answer(v);$('#chatI').value=''}};
-$('#chatO').onclick=()=>{$('#chat').hidden=false;$('#chatO').hidden=true;if(!$('#msgs').children.length)say('Hi, welcome to Gotham Consult. How can we help?','bot')};
+$('#chatO').onclick=()=>{$('#chat').hidden=false;$('#chatO').hidden=true;if(!$('#msgs').children.length)say('Hi, welcome to Gotham Consult × Carlson Capital Ltd. How can we help?','bot')};
 $('#chatX').onclick=()=>{$('#chat').hidden=true;$('#chatO').hidden=false};
 </script>
 
